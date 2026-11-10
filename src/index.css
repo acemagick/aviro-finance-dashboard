@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+/* `dark:` utilities apply when <html> has the "dark" class (set by ThemeProvider). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * THEME TOKENS
+ * Every colour in the dashboard comes from these variables, so light and
+ * dark mode stay consistent. Components use them through Tailwind classes
+ * such as bg-surface, text-ink-muted, border-line, text-income, bg-expense.
+ * Chart colours for Recharts live in src/theme/chartPalette.ts and mirror these.
+ */
+:root {
+  color-scheme: light;
+
+  --canvas: #f4f3ef;
+  --surface: #ffffff;
+  --surface-muted: #f6f5f1;
+  --line: #e4e2dc;
+  --line-subtle: #efede8;
+  --ink: #17181b;
+  --ink-muted: #5b5f67;
+  --ink-subtle: #6b6f75;
+
+  --accent: #17181b;
+  --on-accent: #ffffff;
+
+  --income: #0f7a5c;
+  --expense: #cf5230;
+  --net: #ecbb45;
+  --on-net: #1d1a12;
+  --margin: #4957d6;
+  --positive: #0f7a5c;
+  --negative: #c4402a;
+  --caution: #9a6406;
+
+  --hero: #17191d;
+  --hero-ink: #f5f5f3;
+  --hero-muted: #a2a6ad;
+  --hero-track: #2d3038;
+  --hero-accent: #4fd1a5;
+
+  /* Income Dashboard summary card */
+  --income-strong: #0f6b52;
+  --on-income-strong: #ffffff;
+  --on-income-strong-muted: #bfe3d6;
+
+  --warn-bg: #fdf7e6;
+  --warn-line: #f0dfab;
+  --warn-ink: #6f520c;
+
+  --cat-material: #c2482c;
+  --cat-manpower: #e8916d;
+  --cat-site: #25282e;
+  --cat-transport: #11866a;
+  --cat-admin: #4957d6;
+  --cat-other: #e0a933;
+}
+
+:root.dark {
+  color-scheme: dark;
+
+  --canvas: #0f1115;
+  --surface: #171a20;
+  --surface-muted: #1e2229;
+  --line: #2b3039;
+  --line-subtle: #232830;
+  --ink: #eef0f3;
+  --ink-muted: #aab0ba;
+  --ink-subtle: #828997;
+
+  --accent: #eef0f3;
+  --on-accent: #15171b;
+
+  --income: #3fbf95;
+  --expense: #f07c5c;
+  --net: #f2c24f;
+  --on-net: #1d1a12;
+  --margin: #8d96f4;
+  --positive: #45c49b;
+  --negative: #f47d66;
+  --caution: #f0c45a;
+
+  --hero: #20242c;
+  --hero-ink: #f3f4f6;
+  --hero-muted: #9aa1ad;
+  --hero-track: #353b46;
+  --hero-accent: #4fd1a5;
+
+  --income-strong: #145a47;
+  --on-income-strong: #f3f4f6;
+  --on-income-strong-muted: #a9d6c6;
+
+  --warn-bg: #29230f;
+  --warn-line: #54451a;
+  --warn-ink: #f1d68d;
+
+  --cat-material: #e0674a;
+  --cat-manpower: #f0a585;
+  --cat-site: #cfd3da;
+  --cat-transport: #3fbf95;
+  --cat-admin: #8d96f4;
+  --cat-other: #f2c24f;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-line: var(--line);
+  --color-line-subtle: var(--line-subtle);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+  --color-income: var(--income);
+  --color-expense: var(--expense);
+  --color-net: var(--net);
+  --color-on-net: var(--on-net);
+  --color-margin: var(--margin);
+  --color-positive: var(--positive);
+  --color-negative: var(--negative);
+  --color-caution: var(--caution);
+  --color-hero: var(--hero);
+  --color-hero-ink: var(--hero-ink);
+  --color-hero-muted: var(--hero-muted);
+  --color-hero-track: var(--hero-track);
+  --color-hero-accent: var(--hero-accent);
+  --color-income-strong: var(--income-strong);
+  --color-on-income-strong: var(--on-income-strong);
+  --color-on-income-strong-muted: var(--on-income-strong-muted);
+  --color-warn-bg: var(--warn-bg);
+  --color-warn-line: var(--warn-line);
+  --color-warn-ink: var(--warn-ink);
+  --color-cat-material: var(--cat-material);
+  --color-cat-manpower: var(--cat-manpower);
+  --color-cat-site: var(--cat-site);
+  --color-cat-transport: var(--cat-transport);
+  --color-cat-admin: var(--cat-admin);
+  --color-cat-other: var(--cat-other);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background-color: var(--canvas);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
